@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing Cards</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+        *{
+            margin:0;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        body{
+            background: rgb(255, 216, 242);
+            font-family: 'Montserrat', sans-serif;
+    
+        }
+        header {
+    color: hsl(210, 2%, 18%);
+    margin: 3.3rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .toggle {
+    margin-top: 2rem;
+    color: hsl(234, 14%, 74%);
+    display: flex;
+    align-items: center;
+  }
+  .toggle-btn {
+    margin: 0 1rem;
+  }
+  .checkbox {
+    display: none;
+  }
+  
+  .sub {
+    background: linear-gradient(135deg, rgb(103, 103, 106) 1%, rgb(46, 46, 48) 100%);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    height: 1.6rem;
+    width: 3.3rem;
+    border-radius: 15px;
+    padding: 0.3rem;
+  }
+  .circle {
+    background-color: #fff;
+    height: 1.4rem;
+    width: 1.4rem;
+    border-radius: 50%;
+  }
+  .checkbox:checked + .sub {
+    justify-content: flex-end;
+  }
+  
+  .cards {
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .card {
+    background: #f3f1f1;
+    color: hsl(232, 12%, 25%);
+    border-radius: 15px;
+    margin:30px;
+  }
+  
+  .cards .card.active {
+    background: linear-gradient(135deg, rgb(123, 124, 131) 0%, rgb(92, 92, 97) 100%);
+    color: #fff;
+    display: flex;
+    box-shadow: 10px 10px 4px -5px rgb(255, 254, 254);
+    transform: scale(1.1);
+    z-index: 1;
+  }
+  ul {
+    margin: 2.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  ul li {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0;
+  }
+  ul li.price {
+    font-size: 25px;
+    color: hsl(232, 13%, 33%);
+    padding-bottom: 2rem;
+  }
+  .shadow {
+    box-shadow: 10px 10px 15px  rgba(24, 24, 24, 0.1);
+  }
+  
+  .card.active .price {
+    color: #fff;
+
+  }
+  
+  .btn {
+    margin-top: 1rem;
+    height: 2.6rem;
+    width: 13.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: linear-gradient(135deg, rgb(114, 114, 123) 0%, rgb(79, 79, 83) 100%);
+    color: #fff;
+    outline: none;
+    border: 0;
+    font-weight: bold;
+  }
+  .active-btn {
+    background: #fff;
+    color: hsl(240, 5%, 31%);
+  }
+  
+  
+  .pack {
+    font-size: 1.1rem;
+  }
+  
+  @media (max-width: 280px) {
+    ul {
+      margin: 1rem;
+    }
+    h1 {
+      font-size: 1.2rem;
+    }
+    .toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 80px;
+    }
+    .cards {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .card {
+      transform: scale(0.8);
+      margin-bottom: 1rem;
+    }
+    .cards .card.active {
+      transform: scale(0.8);
+    }
+  }
+  
+  @media (min-width: 280px) and (max-width: 320px) {
+    ul {
+      margin: 20px;
+    }
+    .cards {
+      display: flex;
+      flex-direction: column;
+    }
+    .card {
+      margin-bottom: 1rem;
+    }
+    .cards .card.active {
+      transform: scale(1);
+    }
+  }
+  
+  @media (min-width: 320px) and (max-width: 414px) {
+    .cards {
+      display: flex;
+      flex-direction: column;
+    }
+    .card {
+      margin-bottom: 1rem;
+    }
+    .cards .card.active {
+      transform: scale(1);
+    }
+  }
+  @media (min-width: 414px) and (max-width: 768px) {
+    .card {
+      margin-bottom: 1rem;
+      margin-right: 1rem;
+    }
+    .cards .card.active {
+      transform: scale(1);
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1046px) {
+    .cards {
+      display: flex;
+    }
+    .card {
+      margin-bottom: 1rem;
+      margin-right: 1rem;
+    }
+    .cards .card.active {
+      transform: scale(1);
+    }
+  }
+
+    </style>
+
+    </head>
+    <body>
+      <header>
+        <h1>Our Pricing</h1>
+        <div class="toggle">
+          <label>Annually </label>
+          <div class="toggle-btn">
+            <input type="checkbox" class="checkbox" id="checkbox" />
+            <label class="sub" id="sub" for="checkbox">
+              <div class="circle"></div>
+            </label>
+          </div>
+          <label> Monthly</label>
+        </div>
+      </header>
+      <div class="cards">
+        <div class="card shadow">
+          <ul>
+            <li class="pack">Basic</li>
+            <li id="basic" class="price bottom-bar">&dollar;199.99</li>
+            <li class="bottom-bar">500 GB Storage</li>
+            <li class="bottom-bar">2 Users Allowed</li>
+            <li class="bottom-bar">Send up to 3 GB</li>
+            <li><button class="btn">Read More</button></li>
+          </ul>
+        </div>
+        <div class="card active">
+          <ul>
+            <li class="pack">Professional</li>
+            <li id="professional" class="price bottom-bar">&dollar;249.99</li>
+            <li class="bottom-bar">1 TB Storage</li>
+            <li class="bottom-bar">5 Users Allowed</li>
+            <li class="bottom-bar">Send up to 10 GB</li>
+            <li><button class="btn active-btn">Read More</button></li>
+          </ul>
+        </div>
+        <div class="card shadow">
+          <ul>
+            <li class="pack">Advanced</li>
+            <li id="master" class="price bottom-bar">&dollar;399.99</li>
+            <li class="bottom-bar">2 TB Storage</li>
+            <li class="bottom-bar">10 Users Allowed</li>
+            <li class="bottom-bar">Send up to 20 GB</li>
+            <li><button class="btn">Read More</button></li>
+          </ul>
+        </div>
+      </div>
+  
+      <script src="script.js"></script>
+    </body>
+    </html>
